@@ -7,7 +7,14 @@
         "clear:dist": "rimraf dist",
         "build:types": "tsc --project tsconfig.type.json",
         "build:src": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
-        "build": "run-s clear:dist build:types build:src"
+        "build": "run-s clear:dist build:types build:src",
+        "version:major": "npm version major",
+        "version:minor": "npm version minor",
+        "version:patch": "npm version patch",
+        "version:premajor": "npm version premajor",
+        "version:preminor": "npm version preminor",
+        "version:prepatch": "npm version prepatch",
+        "version:prerelease": "npm version prerelease"
     },
     "type": "module",
     "types": "./dist/types/index.d.ts",
@@ -22,7 +29,10 @@
             "require": "./dist/cjs/yiu-winston-kit.min.cjs"
         }
     },
-    "keywords": [],
+    "keywords": [
+        "winston",
+        "log"
+    ],
     "author": "Fidel Yiu",
     "license": "ISC",
     "dependencies": {
