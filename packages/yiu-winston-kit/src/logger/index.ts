@@ -4,6 +4,7 @@ export interface LogWrapBase {
     message: any
     context: string
     error?: any
+    splat?: unknown[]
     [key: string]: any
 }
 
