@@ -2,7 +2,6 @@
     "name": "yiu-winston-kit",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
     "scripts": {
         "format": "prettier --ignore-path .prettierignore --write .",
         "clear:dist": "rimraf dist",
@@ -10,8 +9,21 @@
         "build:src": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
         "build": "run-s clear:dist build:types build:src"
     },
+    "type": "module",
+    "types": "./dist/types/index.d.ts",
+    "unpkg": "./dist/umd/yiu-winston-kit.min.js",
+    "jsdelivr": "./dist/umd/yiu-winston-kit.min.js",
+    "browser": "./dist/umd/yiu-winston-kit.min.js",
+    "main": "./dist/cjs/yiu-winston-kit.min.cjs",
+    "module": "./dist/esm/yiu-winston-kit.min.js",
+    "exports": {
+        ".": {
+            "import": "./dist/esm/yiu-winston-kit.min.js",
+            "require": "./dist/cjs/yiu-winston-kit.min.cjs"
+        }
+    },
     "keywords": [],
-    "author": "",
+    "author": "Fidel Yiu",
     "license": "ISC",
     "dependencies": {
         "logform": "^2.5.1",

@@ -11,6 +11,7 @@ const bundles: RollupOptions[] = [
             file: 'dist/esm/yiu-winston-kit.js',
             format: 'esm',
         },
+        external: ['logform', 'winston'],
         plugins: [typescript()],
     },
     /* es min no map */
@@ -20,6 +21,7 @@ const bundles: RollupOptions[] = [
             file: 'dist/esm/yiu-winston-kit.min.nomap.js',
             format: 'esm',
         },
+        external: ['logform', 'winston'],
         plugins: [typescript(), terser()],
     },
     /* es min */
@@ -31,6 +33,7 @@ const bundles: RollupOptions[] = [
             sourcemap: true,
             sourcemapFile: 'dist/esm/yiu-winston-kit.min.map',
         },
+        external: ['logform', 'winston'],
         plugins: [typescript(), terser()],
     },
     /* commonjs */
@@ -40,6 +43,7 @@ const bundles: RollupOptions[] = [
             file: 'dist/cjs/yiu-winston-kit.cjs',
             format: 'cjs',
         },
+        external: ['logform', 'winston'],
         plugins: [typescript()],
     },
     /* commonjs min nomap*/
@@ -49,6 +53,7 @@ const bundles: RollupOptions[] = [
             file: 'dist/cjs/yiu-winston-kit.min.nomap.cjs',
             format: 'cjs',
         },
+        external: ['logform', 'winston'],
         plugins: [typescript(), terser()],
     },
     /* commonjs min */
@@ -60,38 +65,7 @@ const bundles: RollupOptions[] = [
             sourcemap: true,
             sourcemapFile: 'dist/cjs/yiu-winston-kit.min.map',
         },
-        plugins: [typescript(), terser()],
-    },
-    /* umd */
-    {
-        input: 'src/index.ts',
-        output: {
-            name: 'YiuWinstonKit',
-            file: 'dist/umd/yiu-winston-kit.js',
-            format: 'umd',
-        },
-        plugins: [typescript()],
-    },
-    /* umd min no map */
-    {
-        input: 'src/index.ts',
-        output: {
-            name: 'YiuWinstonKit',
-            file: 'dist/umd/yiu-winston-kit.min.nomap.js',
-            format: 'umd',
-        },
-        plugins: [typescript(), terser()],
-    },
-    /* umd min */
-    {
-        input: 'src/index.ts',
-        output: {
-            name: 'YiuWinstonKit',
-            file: 'dist/umd/yiu-winston-kit.min.js',
-            format: 'umd',
-            sourcemap: true,
-            sourcemapFile: 'dist/umd/yiu-winston-kit.min.map',
-        },
+        external: ['logform', 'winston'],
         plugins: [typescript(), terser()],
     },
 ]
